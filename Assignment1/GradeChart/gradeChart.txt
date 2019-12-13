@@ -1,0 +1,288 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+/**
+ *  ITNP001 Assignment 1  Starter template  Autumn 2015
+ *  <p>
+ *  This template gives some basic functionality: a single text field
+ *  and a button: click the button and the text field content is
+ *  converted to an int, then stored in a global variable which is then
+ *  displayed by a drawString.
+ *  <p>
+ *  Other text fields must be added, and processed when the button is clicked.
+ *  <p>
+ *  A "clear fields" button must be added, and the two sliders.
+ *  <p>
+ *  Bars comprising repeated letters must be drawn rather than the value being displayed.
+ *  <p>
+ *  The entered data must be checked for validity, and if invalid then a
+ *  warning must be displayed rather than either the data values or a bar chart.
+ *  <p>
+ *  There are various ideas in the template that you can follow up, extend,
+ *  make use of.
+ *  <p>
+ *  Remember that introducing extra, private, methods and so on may make your program
+ *  easier to deal with. Remember comments and layout. Think about making your solution
+ *  easily adaptable for changes that might be needed (changes in fonts, sizes, positions,
+ *  colours...).
+ */
+public class GradeChart extends JFrame
+implements ActionListener, ChangeListener {
+    //  For entry of number of students with grade A
+    private JTextField gradeAField = new JTextField( 5 );
+    private JTextField gradeBField = new JTextField( 5 );
+    private JTextField gradeCField = new JTextField( 5 );
+    private JTextField gradeDField = new JTextField( 5 );
+    private JTextField gradeEField = new JTextField( 5 );
+
+    // To record validated entered data
+
+    private int gradeAs;
+    private int gradeBs;
+    private int gradeCs;
+    private int gradeDs;
+    private int gradeEs;
+
+    private JSlider slider1;
+    private JSlider slider2;
+
+    private JButton displayChartButton = new JButton( "Display bar chart" );
+    private JButton resetChartButton = new JButton(" Clear Form ");
+
+    // The panel for drawing the bar chart
+
+    private JPanel chartPanel = new JPanel();
+
+    private Color chartPanelColor = Color.cyan;
+    //controls and sets font size and style for both labels and bar chart letters
+
+    private final Font labelFont = new Font( "TimesNewRoman", Font.BOLD | Font.ITALIC, 16 );
+    private Font barFont = new Font( "Batang", Font.BOLD, 16 );
+    
+//  The distance from the left hand side of the drawing panel to the chart area
+    
+     private final int chartLeftX = 20;
+   
+ // The distance from the top of the drawing panel to the chart area
+    
+     private final int chartTopY = 50;
+
+    public static void main( String[] args ) {
+
+        GradeChart chart = new GradeChart();
+        chart.setSize( 550, 550 );
+        chart.createGUI();
+        chart.setVisible( true );
+        chart.setResizable(false);
+
+    }  // End of main
+
+    //Sets up the graphical user interface
+
+    private void createGUI() {
+        // Set up main window characteristics
+        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        Container window = getContentPane();
+        window.setLayout( new FlowLayout() );
+       
+	 // Text field for entry of number of grades As
+        JLabel spacingLabel = new JLabel ("          ");
+        window.add(spacingLabel);
+
+        JLabel gradeAFieldLabel = new JLabel( "# of grade As:" );
+        gradeAFieldLabel.setFont( labelFont );
+        window.add( gradeAFieldLabel );
+        window.add( gradeAField );
+        gradeAField.addActionListener(this);
+        window.add(spacingLabel);
+
+        JLabel gradeBFieldLabel = new JLabel( "# of grade Bs:" );
+        gradeBFieldLabel.setFont( labelFont );
+        window.add( gradeBFieldLabel );
+        window.add( gradeBField );
+        gradeBField.addActionListener(this);
+        window.add(spacingLabel);
+
+        JLabel gradeCFieldLabel = new JLabel( "# of grade Cs:" );
+        gradeCFieldLabel.setFont( labelFont );
+        window.add( gradeCFieldLabel );
+        window.add( gradeCField );
+        gradeCField.addActionListener(this);
+        window.add(spacingLabel);
+
+        JLabel gradeDFieldLabel = new JLabel( "# of grade Ds:" );
+        gradeDFieldLabel.setFont( labelFont );
+        window.add( gradeDFieldLabel );
+        window.add( gradeDField );
+        gradeDField.addActionListener(this);
+        window.add(spacingLabel);
+
+        JLabel gradeEFieldLabel = new JLabel( "# of grade Es:" );
+        gradeEFieldLabel.setFont( labelFont );
+        window.add( gradeEFieldLabel );
+        window.add( gradeEField );
+        gradeEField.addActionListener(this);
+       
+	 window.add(spacingLabel);
+       
+ // Set up button to request chart display
+        window.add( displayChartButton );
+        displayChartButton.addActionListener( this );
+        window.add(spacingLabel);
+
+        window.add( resetChartButton);
+        resetChartButton.addActionListener(this);
+        window.add(spacingLabel);
+
+        slider1 = new JSlider (JSlider.HORIZONTAL, 10, 50, 10 );
+        window.add(slider1);
+        slider1.addChangeListener(this);
+        window.add(spacingLabel);
+
+        slider2 = new JSlider (JSlider.HORIZONTAL, 1, 75, 10);
+        window.add(slider2);
+        slider2.addChangeListener(this);
+        window.add(spacingLabel);
+        // Set up the panel for drawing on
+        chartPanel.setPreferredSize( new Dimension( 450, 300 ) );
+        chartPanel.setBackground( chartPanelColor );
+        window.add( chartPanel );
+    }
+    // End of createGUI
+
+    //stateChanegd 'listens' out for slider input (ie, if 'dragged'). Slider1 sets font size by referring to barFont variable. Slider 2
+    //slider2 controls the spacing of letters
+    
+public void stateChanged (ChangeEvent e) {
+        if (e.getSource() == slider1) {
+            int fontSize = slider1.getValue();
+            barFont = new Font( "Batang", Font.BOLD, fontSize );
+            drawChart();
+        }
+
+        if (e.getSource() == slider2){ 
+            checkAndRecordData();    //call to checkAndRecordData to check for exceptions and display data
+        }
+    }
+    //actionPerformed is the workhorse of the program and 'listens' out for button actions. displayChartButton, resetChartButton 
+   // are responsibel for displaying garde charts and clearing text field. checkAndRecordData method is called to check for exceptions.
+    
+public void actionPerformed( ActionEvent e ) {     
+        if ( e.getSource() == displayChartButton ) 
+        {
+            checkAndRecordData();
+        }     
+        else if (e.getSource() == resetChartButton){
+            gradeAField.setText("");
+            gradeBField.setText("");
+            gradeCField.setText("");
+            gradeDField.setText("");
+            gradeEField.setText("");
+        }
+        else {
+            checkAndRecordData(); //if not clearing field display or pressing displayButton then update chart display with
+            // text field input valus.
+        }
+    } 
+    // End of actionPerformed
+    // method responsible for drawing actual chart with appropriate no. of letters using actual parameter values
+   
+ 	private void drawChart(){
+        Graphics g = chartPanel.getGraphics();
+        int step = 40;
+        g.setColor( chartPanelColor );
+        g.fillRect( 0, 0, 450, 300 );
+        g.setColor (Color.white);
+        g.fillRect (20, 35, chartLeftX + 400, 220);                     // draws the white space
+        g.setColor( Color.black );
+        gradeBar( g, "A", gradeAs, chartTopY );
+        gradeBar( g, "B", gradeBs, chartTopY + step );
+        gradeBar( g, "C", gradeCs, chartTopY + ( 2 * step ) );
+        gradeBar( g, "D", gradeDs, chartTopY + ( 3 * step ) );
+        gradeBar( g, "E", gradeEs, chartTopY + ( 4 * step ) );
+
+        drawBorders(g); //call to draw the border
+    }
+    //gradeBar method responsible for setting formal parameters to display on JPanel. Caluclated using for loop by recording slider2 
+    //value and then setting appropriate spacing for the 5 different grades (A-E).
+   
+	 private void gradeBar(Graphics g, String grade, int students, int yPos) {
+        int xPos = 20;
+        int spacing = slider2.getValue();      // so that we can move the "cursor" along the x coordinate
+        g.setFont( barFont );
+        for ( int i=0; i<students; i++ ) {
+            g.drawString( grade, xPos, yPos); 
+            xPos= xPos + spacing;     
+        }
+        g.drawLine( chartLeftX - 5, yPos + 20, chartLeftX + 405, yPos +20 );    // this adds the line under the current grade
+    }
+
+    private void drawBorders( Graphics g ) {	
+        int x = 20;
+        int y = 0;
+        while (x +10 < chartPanel.getWidth()) {
+            g.drawRect(x,10,10,5);
+            g.drawRect(x,275,10,5);
+
+            x = x +15;
+        } 
+    }
+
+    /** 
+     *  Processes data entered in the text field. 
+     *  <p> 
+     *  Checks that the textfield contains valid data, converts to an int, 
+     *  and saves it in the appropriate global variable. 0 is recorded if the 
+     *  textfield does not contain valid data. 
+     */ 
+    private void checkAndRecordData() { 
+        int tempAs = 0;                // Default value 
+        int tempBs = 0; 
+        int tempCs = 0; 
+        int tempDs = 0; 
+        int tempEs = 0; 
+        try { 
+            tempAs = Integer.parseInt( gradeAField.getText() ); 
+            tempBs = Integer.parseInt( gradeBField.getText() ); 
+            tempCs = Integer.parseInt( gradeCField.getText() ); 
+            tempDs = Integer.parseInt( gradeDField.getText() ); 
+            tempEs = Integer.parseInt( gradeEField.getText() );    
+        } catch ( NumberFormatException e ) { 
+            JOptionPane.showMessageDialog(null, "Only numbers allowed. Re-enter."); 
+        } 
+        // The entered data must be checked to ensure that it is correctly in range        
+        if ( tempAs < 0 || tempBs < 0 || tempCs < 0 || tempDs < 0 || tempEs < 0 ) {   
+            JOptionPane.showMessageDialog(null, "Cannot have negative students. Re-enter"); 
+        }  // If the entered data is OK, save to global variable 
+        else {                          
+            gradeAs = tempAs; 
+            gradeBs = tempBs; 
+            gradeCs = tempCs; 
+            gradeDs = tempDs; 
+            gradeEs = tempEs; 
+        }    
+        spaceCheck();            
+    }
+    // End of checkAndRecordData 
+
+    // To ensure it doesn't overflow its boundaries 
+    private void spaceCheck() { 
+        Graphics g = chartPanel.getGraphics();
+        int max = Math.max( Math.max( gradeAs, gradeBs ), Math.max( gradeCs, gradeDs ) ); 
+        if ( gradeEs > max ) {
+            max = gradeEs; 
+        }
+        int spaceRequired = max * slider2.getValue(); 
+        if (spaceRequired > chartPanel.getWidth()-10){
+            g.setColor (Color.white);
+            g.fillRect (20, 35, chartLeftX + 400, 220); 
+            g.setColor (Color.red);
+            g.drawString("Cannot display! Data out of range! Please correct", 100, 150);
+        }
+        else {
+            drawChart();   
+        }
+    }
+}
+// End of GradeChart application

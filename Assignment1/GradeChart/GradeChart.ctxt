@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=
+comment1.target=void\ createGUI()
+comment2.params=e
+comment2.target=void\ stateChanged(javax.swing.event.ChangeEvent)
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=
+comment4.target=void\ drawChart()
+comment5.params=g\ grade\ students\ yPos
+comment5.target=void\ gradeBar(java.awt.Graphics,\ java.lang.String,\ int,\ int)
+comment6.params=g
+comment6.target=void\ drawBorders(java.awt.Graphics)
+comment7.params=
+comment7.target=void\ checkAndRecordData()
+comment7.text=\ \r\n\ \ Processes\ data\ entered\ in\ the\ text\ field.\ \r\n\ \ <p>\ \r\n\ \ Checks\ that\ the\ textfield\ contains\ valid\ data,\ converts\ to\ an\ int,\ \r\n\ \ and\ saves\ it\ in\ the\ appropriate\ global\ variable.\ 0\ is\ recorded\ if\ the\ \r\n\ \ textfield\ does\ not\ contain\ valid\ data.\ \r\n
+comment8.params=
+comment8.target=void\ spaceCheck()
+numComments=9

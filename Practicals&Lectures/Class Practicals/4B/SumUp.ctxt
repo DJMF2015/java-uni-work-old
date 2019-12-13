@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ \ The\ main\ launch\ program\ for\ the\ SumUp\ class\r\n\r\n\ @param\ \ args\ \ The\ command\ line\ arguments\ (ignored\ here)\r\n
+comment1.params=
+comment1.target=void\ createGUI()
+comment1.text=Sets\ up\ the\ graphical\ user\ interface
+comment2.params=event
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ \ Responds\ to\ a\ button\ click\ by\ carrying\ out\ the\ requested\r\n\ \ calculation\ and\ displaying\ the\ result\r\n\r\n\ @param\ \ event\ \ Details\ of\ the\ event\ (ignored\ here)\r\n
+comment3.params=start\ end
+comment3.target=int\ sum(int,\ int)
+comment3.text=\r\n\ Returns\ the\ sum\ of\ integers\ from\ start\ up\ to\ end\ inclusive\r\n\r\n\ @param\ \ start\ \ The\ first\ value\ in\ the\ range\r\n\ @param\ \ end\ \ \ \ The\ final\ value\ in\ the\ range\r\n\ @return\ The\ sum\ from\ start\ up\ to\ end\ inclusive\r\n
+numComments=4

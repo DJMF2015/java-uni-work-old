@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ \ The\ main\ program\ for\ the\ PlayBalloon\ class\r\n\r\n\ @param\ \ args\ \ The\ command\ line\ arguments\r\n
+comment1.params=
+comment1.target=void\ createGUI()
+comment1.text=Set\ up\ the\ Graphical\ user\ interface
+comment2.params=event
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ \ React\ to\ the\ various\ GUI\ buttons\:\r\n\ \ Update\ balloon\ or\ mode\ information\ as\ necessary\ and\ redraw\ the\ screen.\r\n\r\n\ @param\ \ event\ \ The\ event\ details\r\n
+comment3.params=event
+comment3.target=void\ stateChanged(javax.swing.event.ChangeEvent)
+comment3.text=\r\n\ \ React\ to\ colorSelector\ being\ adjusted\:\r\n\ \ Convert\ the\ setting\ to\ a\ proper\ colour,\ update\ the\ balloon's\ details\r\n\ \ and\ redraw\ the\ screen\r\n\r\n\ @param\ \ event\ \ Event\ details\ (ignored)\r\n
+comment4.params=
+comment4.target=void\ paintScreen()
+comment4.text=Redraw\ the\ graphics\ panel
+comment5.params=colourNum
+comment5.target=java.awt.Color\ convertColour(int)
+comment5.text=\r\n\ \ A\ helper\ method\ to\ convert\ a\ number\ 0-6\ to\ a\ Color.\r\n\r\n\ @param\ \ colourNum\ \ The\ number\ to\ be\ converted\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ The\ corresponding\ Color\r\n
+numComments=6

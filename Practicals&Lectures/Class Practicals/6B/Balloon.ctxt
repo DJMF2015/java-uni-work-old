@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=initialDiameter\ initialX\ initialY
+comment0.target=Balloon(int,\ int,\ int)
+comment0.text=\r\n\ Constructor\ for\ the\ Balloon\ object\r\n\r\n\ @param\ \ initialDiameter\ \ Initial\ diameter\r\n\ @param\ \ initialX\ \ \ \ \ \ \ \ \ Initial\ x\ coordinate\r\n\ @param\ \ initialY\ \ \ \ \ \ \ \ \ Initial\ y\ coordinate\r\n
+comment1.params=change
+comment1.target=void\ changeSize(int)
+comment1.text=\r\n\ \ Alters\ the\ size\ of\ the\ balloon\r\n\r\n\ @param\ \ change\ \ This\ is\ added\ to\ the\ current\ diameter\r\n
+comment2.params=xChange\ yChange
+comment2.target=void\ move(int,\ int)
+comment2.text=\r\n\ \ Moves\ the\ balloon\r\n\r\n\ @param\ \ xChange\ \ This\ should\ be\ added\ to\ the\ current\ x\ coordinate\r\n\ @param\ \ yChange\ \ This\ should\ be\ added\ to\ the\ current\ y\ coordinate\r\n
+comment3.params=col
+comment3.target=void\ setBalloonColor(java.awt.Color)
+comment3.text=\r\n\ \ Sets\ the\ balloonColor\ attribute\ of\ the\ Balloon\ object\r\n\r\n\ @param\ \ col\ \ The\ new\ balloonColor\ value\r\n
+comment4.params=g
+comment4.target=void\ display(java.awt.Graphics)
+comment4.text=\r\n\ \ Draw\ a\ pictorial\ view\ of\ the\ balloon\r\n\r\n\ @param\ \ g\ \ Where\ to\ draw\r\n
+comment5.params=g
+comment5.target=void\ describe(java.awt.Graphics)
+comment5.text=\r\n\ \ Draw\ a\ textual\ "view"\ of\ the\ balloon\r\n\r\n\ @param\ \ g\ \ Where\ to\ draw\r\n
+numComments=6

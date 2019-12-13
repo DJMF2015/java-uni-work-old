@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=windowName
+comment0.target=RainGUI(java.lang.String)
+comment0.text=\r\n\ \ \ \ Constructor\ for\ rainfall\ application.\ \r\n\ \ \ \ Create\ rainfall\ window\ and\ set\ up\ Total\ object\ to\ hold\ the\ rainfall\ data.\r\n
+comment1.params=
+comment1.target=void\ createGUI()
+comment1.text=\r\n\ \ \ \ Initialise\ rainfall\ application\ and\ set\ up\ on-screen\ display.\r\n
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=event
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.text=\r\n\ \ \ \ Handle\ button\ clicks\ to\ enter\ day\ and\ rainfall,\ request\ the\ wettest\ or\r\n\ \ \ \ driest\ day,\ to\ compute\ the\ rainfall\ average,\ or\ to\ clear\ all\ totals.\r\n\r\n\ \ \ \ @param\ event\ \ \ \ \ \ \ \ button\ click\ event\r\n
+comment4.params=g
+comment4.target=void\ paintScreen(java.awt.Graphics)
+comment4.text=\r\n\ \ \ \ Draw\ application\ objects\ on-screen.\r\n\r\n\ \ \ \ @param\ g\ \ \ \ \ \ \ \ \ \ \ \ graphics\ object\r\n
+numComments=5

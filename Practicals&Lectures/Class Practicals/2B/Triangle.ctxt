@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ \ The\ main\ method\ is\ the\ main\ action\ for\ the\ Triangle\ program.\r\n\r\n\ @param\ \ args\ \ The\ launch\ arguments\ (though\ none\ are\ required).\r\n
+comment1.params=
+comment1.target=void\ createGUI()
+comment1.text=\r\n//\ \ \ \ \ \ *\ \ The\ createGUI\ method\ is\ called\ by\ the\ main\ method\r\n\ \ to\ set\ up\ the\ graphical\ user\ interface.\r\n
+comment2.params=event
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ \ The\ actionPerformed\ method\ is\ called\ automatically\r\n\ \ when\ the\ button\ is\ pressed.\r\n\r\n\ @param\ \ event\ \ This\ brings\ information\ about\ the\ button\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ press\ event.\ Ignored\ in\ this\ application.\r\n
+comment3.params=paper\ bottomX\ bottomY\ base\ height
+comment3.target=void\ drawTriangle(java.awt.Graphics,\ int,\ int,\ int,\ int)
+numComments=4

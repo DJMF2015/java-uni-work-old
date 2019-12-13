@@ -1,0 +1,98 @@
+
+Methods:
+  -class methods: subroutiens/functions taht operate on class variables of the class
+  -instance methods: subroutines(functions) taht operate on insatcnes of the class
+Constructors: Methods that have the same naem as the class and are automatically called to create new instances of the class.
+
+Whenever you have a variable outside a method but INSIDE the entire class it is called an instance variable.
+Constructor allows you to give the variable a value as soson as the object is created. Must (method) have same name as class.eg) public class tuna
+																public tuna (String xxx)
+Constructor:
+A class contains constructors that are invoked to create objects based on the class definition.
+
+Constructor declarations look like method declarations except that they use the name of the class and have no return type.
+
+A class can have several constructors with different parameters. Each class must define at least one constructor.
+
+In the following example the constructor of the class expects a parameter.
+
+package com.vogella.javaintro.base;
+
+public class MyConstructorExample2 {
+
+  String s;
+
+  public MyConstructorExample2(String s) {
+    this.s = s;
+  }
+} 
+
+
+Eg) public class HelloWorld(   ---class declaration
+ private String employeeName;   --instance variable
+ public static void main(String[]args){  ---class method
+}
+ static void showMessage(String msg){   ---instance method
+ int i;    --- instance variable
+
+METHODS	are defined within a class.
+METHODS signature includes: access modifiers, static keywords,arguments and return type. 
+VARIABLEs defined within a code blaock have a scope within that code block ONLY (temp variables).
+Variables are strongly typed meaning must be defined before they are referenced. Each var shouldf e initailised on declaration wherever possible.
+- instance varaibles - start of class
+-Method variables - start of code block
+- temp variables - within code block
+
+Event handler examples: 
+actionPerformed method
+actionListener
+stateChnanged
+
+Braces:
+Make braces line UP with one another! No semicolon after an if statement.
+Strings:
+To test whether two stringare equal MUST use the 'equals' method. eg) if (String1.equals(String2))...
+lexiograpgic order:
+when comapring strings, remember the order. All uppercases come BEFORE lowercases. So 'z' comes before 'a'.
+Space charcacter comes before all printabel chars. Numbers before letters
+
+OOP
+classes and methods are basics of oop. Focus is on data contaibed within objects and not on the code that manipualtes the data.
+Class contains instance vars, methods and constructors.
+Objects are instantaited by calling the constructors. Each object created from a class has a copy of the instance variables. Each object manipulates its instance variables independently using the methods of the class. While variables represent an object, the methods help in modification of these variables and accomplishment of tasks. 
+
+Arrays:
+To put a value into an Array (2D) we can do it like this:
+sales[2][3] = Integer.ParseInt(textFireld.getText()); //row/column
+
+and to displayt he values of the elements in teh array using text fields...
+
+To change value of the array we can use assignment operators:
+sales[3][2] = 99;
+
+Get/Set methods and conersion from textFiled input:
+
+JTextField can be used to set and get text for input/output.
+When input is entered via a textfield, the set/getText can be manipulated.
+To contruct:
+Private textField1 = new JTextField (15);
+private textField2 = new JTextField ("Hello!, 15);
+
+
+String s;
+s - textField1.getText();
+textField1.setText(s);
+
+IF two ints are entered into the text fields we need to use the parsing method to convert the int into a string to display.
+We use Integer.ParseInt and Integer.toString.
+
+for example,
+int number1 =  Integer.parseInt(numberTextField1.getText());
+int number2 = Integer.parseInt(numberTextField2.getText());
+sumField.setText(Integer.toString(number 1 + number 2));
+
+OOP:
+Abstraction - modeling relevant parts but ignoring the small irrelevent details from programmer.
+Nouns: These are often the Objects for the class (things).
+Verbs: (doing words) as these are often the Methods.
+

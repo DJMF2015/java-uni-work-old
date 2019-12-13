@@ -1,0 +1,57 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class SomeShapes extends JFrame
+    implements ActionListener {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JButton button;
+    private JPanel panel;
+
+    public static void main (String[] args) {
+        SomeShapes frame = new SomeShapes();
+        frame.setTitle("My first drawing attempt using java");
+        frame.setSize(500, 400);
+        frame.createGUI();
+        frame.setVisible(true);
+    }
+
+    private void createGUI() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        Container window = getContentPane();
+        window.setLayout(new FlowLayout() );
+
+        panel = new JPanel();
+        panel.setPreferredSize(new Dimension(400, 300));
+        panel.setBackground(Color.white);
+        window.add(panel);
+
+        button = new JButton("Click here");
+        window.add(button);
+        button.addActionListener(this);
+    }
+    public void actionPerformed(ActionEvent event) {
+        Graphics paper = panel.getGraphics();
+        paper.drawString("Rectangle", 30,25);
+        paper.drawRect(30, 35, 90, 90);
+        paper.setColor(Color.black);
+        paper.drawString("Oval", 130,30);
+        paper.setColor(Color.black);
+        paper.fillOval(130, 60, 50, 50);
+        paper.setColor(Color.black);
+        paper.drawString("Oval", 230,30);
+        paper.fillOval(230, 60, 30, 50);
+        paper.setColor(Color.cyan);
+        paper.fillRect(30, 100, 90, 70);
+        paper.setColor(Color.black);
+        paper.drawOval(130, 100, 50, 50);
+        paper.setColor(Color.black);
+        paper.drawOval(230, 100, 30, 50);      
+    }
+}
+
+   

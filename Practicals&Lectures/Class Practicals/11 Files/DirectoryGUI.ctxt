@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=windowName
+comment0.target=DirectoryGUI(java.lang.String)
+comment0.text=\r\n\ \ \ \ Constructor\ for\ directory\ application.\r\n\ \ \ \ Create\ directory\ window\ and\ set\ up\ phone\ book\ object\ to\ hold\ the\ directory\ data.\r\n
+comment1.params=event
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment1.text=\r\n\ \ \ \ Handle\ button\ clicks\ to\ enter\ name/number,\ find\ number\ by\ name,\ and\r\n\ \ \ \ delete\ name/number.\r\n\r\n\ \ \ \ @param\ event\ \ \ \ \ \ \ \ button\ click\ event\r\n
+comment2.params=
+comment2.target=void\ createGUI()
+comment2.text=\r\n\ \ \ \ Initialise\ directory\ application\ and\ set\ up\ on-screen\ display.\r\n
+comment3.params=e
+comment3.target=void\ windowClosing(java.awt.event.WindowEvent)
+numComments=4

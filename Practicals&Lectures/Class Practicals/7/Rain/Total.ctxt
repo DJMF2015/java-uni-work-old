@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Total()
+comment0.text=Constructor\ for\ rainfall\ total.
+comment1.params=day\ rainfall
+comment1.target=boolean\ addRain(int,\ float)
+comment1.text=\r\n\ \ \ \ Add\ rainfall\ for\ specific\ day\ into\ array\ <var>rain</var>.\r\n\r\n\ \ \ \ @param\ day\ \ \ \ \ \ \ \ \ \ day\ to\ be\ updated\r\n\ \ \ \ @param\ rainfall\ \ \ \ \ rainfall\ in\ mm\r\n\ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ true\ if\ day\ and\ rainfall\ valid\r\n
+comment2.params=
+comment2.target=float\ averageRain()
+comment2.text=\r\n\ \ \ \ Compute\ average\ rainfall\ from\ array\ <var>rain</var>.\r\n\r\n\ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ average\ rainfall\ in\ mm\r\n
+comment3.params=
+comment3.target=int\ driestDay()
+comment3.text=\r\n\ \ \ \ Compute\ the\ driest\ day\ in\ array\ <var>rain</var>.\ If\ there\ are\ several\r\n\ \ \ \ candidates,\ chooser\ the\ later\ day.\r\n\r\n\ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ day\ number\ of\ driest\ day\r\n
+comment4.params=day
+comment4.target=float\ getRain(int)
+comment4.text=\r\n\ \ \ \ Get\ rainfall\ for\ day\ from\ array\ <var>rain</var>.\r\n\r\n\ \ \ \ @param\ day\ \ \ \ \ \ \ \ \ \ day\ to\ be\ checked\r\n\ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ rainfall\ in\ mm\r\n
+comment5.params=g
+comment5.target=void\ showTotals(java.awt.Graphics)
+comment5.text=\r\n\ \ \ \ Show\ rainfall\ totals\ from\ array\ <var>rain</var>\ in\ histogram\ form.\ The\r\n\ \ \ \ constants\ <var>baseline</var>,\ <var>height</var>\ and\ <var>width</var>\r\n\ \ \ \ define\ the\ layout\ of\ the\ histogram.\r\n\r\n\ \ \ \ @param\ g\ \ \ \ \ \ \ \ \ \ \ \ graphics\ object\r\n
+comment6.params=
+comment6.target=int\ wettestDay()
+comment6.text=\r\n\ \ \ \ Compute\ the\ wettest\ day\ in\ array\ <var>rain</var>.\ If\ there\ are\ several\r\n\ \ \ \ candidates,\ chooser\ the\ later\ day.\r\n\r\n\ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ day\ number\ of\ driest\ day\r\n
+comment7.params=
+comment7.target=void\ zeroTotals()
+comment7.text=\r\n\ \ \ \ Zeroise\ all\ rainfall\ totals\ in\ array\ <var>rain</var>.\r\n
+numComments=8

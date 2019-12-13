@@ -1,0 +1,47 @@
+Processing Arrays using Loops 
+It would be quite difficult to process each of the array's elements individually as we have done in the previous chapter. Since these are repetitive tasks, repetition statements like for and while come to our rescue. The common approach is to use a for loop with a variable used to keep track of the index number and iterate through the entire array. 
+
+For example, the following code stores the numbers from 1 to 7 in a seven element int array. 
+
+int[] a =new int[7];
+for ( int i=0; i<a.length; i++) {
+    a[i]= i+1;
+}
+
+In a similar way, a for loop can be used to print the elements of the array. 
+
+for ( int i=0; i<a.length; i++) {
+    System.out.println("Element at index "+i+" is  "+a[i]);
+}
+
+And the code below stores the first seven even numbers in the array a, starting from 2. 
+
+for ( int i=0; i<a.length; i++) {
+    a[i] = (i+1) * 2;
+}
+
+Here are a few more example which use loops to process arrays. 
+
+examples
+We may also use the enhanced for loop ( also known as the for each loop) to access the elements of the array in a more convenient way. The for each loop has the following syntax. 
+
+for ( <data type> <variable name>:< array name>) {
+    // code
+}
+
+The data type should be the same as the data type of the variables that are stored in the specified array or it can be a higher data type. For example, when the array is of type int, the data type specified can be long. 
+
+For each iteration of the for loop, an element of the array starting from the zeroth index is stored in the variable specified in the header and the body of the for loop is executed. In other words, the body of the for loop executes for each element of the array. 
+
+The following enhanced for loop is used to print the elements of the array. 
+
+int[] a ={3,4,7,9};
+for ( int x: a ) {
+    System.out.println(x);
+}
+
+This is how the above code works. That value of x is first initialised to a[0] i.e. 3 and the body of the for loop is executed which will causes the integer 3 to be printed on the screen. Next a[1] i.e. 4 is assigned to x and the body executed again. In this the loop continues until all the elements are printed. 
+
+Note that the enhanced for loop cannot replace every for loop that is used to manipulate an array. This is because, the enhanced for loop only provides us the values held in the array and not a means to manipulate those values unless the array contains reference type variable. For example, we cannot use the for loop to initialise the array variables with the natural number from 1 to 7, as done above using a normal for loop. This is because elements here are of type int which is a primitive data type. Hence the variable x holds the copy of the integer variable of the array and not a reference to the variable. Moreover, we have no counter variables that would help in manipulating the array. However, if the array of of a reference type, like Student, the values stored in the array cannot not just be accessed but also modified, because in that case the variable specified in the for header (say x) holds a reference to the Student object stored in the array. 
+
+The enhanced for loop is used to iterate through not just an array, but a collection in general. We will see what collections are in a later chapter. 

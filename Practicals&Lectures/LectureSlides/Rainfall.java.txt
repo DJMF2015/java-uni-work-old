@@ -1,0 +1,194 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+
+/**
+ * This application is based on an applet presented by Bell & Parr
+ * in early editions of their book.
+ * 
+ * It displays the rainfall for each day of the week, with the total.
+ * The rainfall for any particular day can be changed by entering
+ * the new rainfall in a textfield and clicking with the mouse on the day
+ * figure to be replaced.
+ */
+public class Rainfall extends JFrame
+                      implements MouseListener, ActionListener {
+
+    /** Number of entries in table (one per day of week). */
+    private final int tableSize = 7;
+    
+    /** Array of integer daily rainfall amounts. */
+    private int[] rain = new int[tableSize];
+
+    /** Keeps the weekly total of daily rainfalls. */
+    private int sum;
+
+    /** Constants for drawing the box layout. */
+    private final int startX = 20;
+    private final int startY = 20;
+    private final int boxHeight = 20;
+    private final int boxWidth = 60;
+
+    /** For entry of a new rainfall. */
+    private JTextField value;
+
+    /** The drawing panel. */
+    private JPanel panel;
+
+    /** The width of the drawing panel. */
+    private final int panelWidth = startX+boxWidth+200;
+
+    /** The height of the drawing panel. */
+    private final int panelHeight = startY+tableSize*boxHeight+20;
+    
+    /** Button to initialize the display. */
+    private JButton show;
+
+    /**
+     *  The main program launcher for the Rainfall class.
+     *
+     * @param  args  The command line arguments (ignored here).
+     */
+    public static void main( String[] args ) {
+
+        Rainfall demo = new Rainfall();
+        demo.setSize( 350, 300 );
+        demo.createGUI();
+        demo.setVisible( true );
+
+    } // End of main
+
+    /**
+     *  Sets up the rainfall table and the graphical user interface.
+     */
+    private void createGUI() {
+
+        // Set rainfalls and total to zero
+        for (int day = 0; day < tableSize; day++)
+            rain[day] = 0;
+        sum = 0;
+
+        // Set up the window
+        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        Container window = getContentPane();
+        window.setLayout( new FlowLayout() );
+
+        JLabel l = new JLabel("Enter figure, then click day");
+        window.add(l);
+        value = new JTextField(10);   // For entry of a new rainfall
+        window.add(value);
+
+        panel = new JPanel();
+        panel.setPreferredSize( new Dimension( panelWidth, panelHeight ) );
+        panel.setBackground( Color.white );
+        window.add( panel );
+        
+        show = new JButton("Show table");
+        window.add(show);
+        show.addActionListener(this);
+
+        panel.addMouseListener(this);       // To enable mouse click event handling in the panel
+
+    } // End of createGUI
+
+    /**
+     * Redraw the display when the Show button is clicked.
+     */
+    public void actionPerformed(ActionEvent e) {
+        
+        // Fetch, erase and then redraw the drawing panel
+        Graphics g = panel.getGraphics();
+        g.setColor( Color.white );
+        g.fillRect( 0, 0, panelWidth, panelHeight );
+        paintScreen(g);
+        
+    } // End of actionPerformed
+
+    /**
+     * Display the daily rainfalls and the weekly total.
+     * Note the use of the layout constants.
+     */
+    private void paintScreen(Graphics g) {
+
+        g.setColor(Color.black);
+        displayTable(g);
+        g.drawString("Total rainfall is " + sum, startX+boxWidth+20, startY+2*boxHeight);
+
+    } // End of paintScreen
+
+    /**
+     * Draw the rainfall table boxes, with values in.
+     * Note the use of the layout constants.
+     */
+    private void displayTable(Graphics g) {
+
+        int y = startY;
+        for (int day = 0; day < tableSize; day++) {                        // For days 0 to 6
+            g.drawRect(startX, y, boxWidth, boxHeight);                    // Draw box
+            g.drawString(Integer.toString(rain[day]), startX+5, y + boxHeight*3/4); // and place rainfall value in it
+            y = y + boxHeight;                                             // Ready for next box down
+        }
+
+    } // End of displayTable
+
+    /**
+     * Respond to mouse click: send y coordinate of mouse click and decoded ("parsed")
+     * integer from the text field to updateDay. Clear the text field.
+     * Recompute the total. Then redraw the screen.
+     */
+    public void mouseClicked(MouseEvent e) {
+
+        // Note: Really need a try/catch here to protect elegantly against bad input
+        int newValue = Integer.parseInt(value.getText());   // Fetch the text field contents and decode
+        int y = e.getY();                                   // Fetch y coordinate of mouse click
+        updateDay(y, newValue);                             // Process coordinate and value
+        value.setText("");                                  // Clear the text field
+        addValues();                                        // Recompute the week's total
+        
+        // Fetch, erase and then redraw the drawing panel
+        Graphics g = panel.getGraphics();
+        g.setColor( Color.white );
+        g.fillRect( 0, 0, panelWidth, panelHeight );
+        paintScreen(g);
+
+    } // End of mouseClicked
+
+    /**
+     * Given the y coordinate of a mouse click, and a new rainfall value,
+     * calculate which table entry it belongs in, and put it there.
+     * Note: the new value is simply ignored if the y coordinate does not correspond to a table entry.
+     */
+    private void updateDay(int y, int newValue) {
+
+        if (startY <= y && y <= startY+tableSize*boxHeight) {    // Check that the y coordinate corresponds to a valid table component
+            int index = (y - startY)/boxHeight;                  // Calculate index of table entry
+            rain[index] = newValue;                              // Insert new rainfall
+        }
+
+    } // End of updateDay
+
+    /**
+     * Add up all the daily rainfalls, and store in global sum.
+     */
+    private void addValues() {
+
+        sum = 0;
+        for (int day = 0; day < rain.length; day++)
+            sum = sum + rain[day];
+
+    } // End of addValues
+
+    // These other MouseListener event handlers must be here,
+    // but are not required in this program, so have empty bodies:
+
+    public void mouseReleased(MouseEvent e) {}
+
+    public void mousePressed(MouseEvent e) {}
+
+    public void mouseEntered(MouseEvent e) {}
+
+    public void mouseExited(MouseEvent e) {}
+
+} // End of class Rainfall
+

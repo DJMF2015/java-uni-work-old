@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=person\ phone
+comment0.target=Entry(java.lang.String,\ java.lang.String)
+comment0.text=\ Constructor\ for\ phone\ book\ entry.\r\n\r\n\ \ @param\ person\ \ \ \ \ \ \ \ \ name\ of\ person\r\n\ \ @param\ phone\ \ \ \ \ \ \ \ \ \ number\ of\ person\r\n
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment1.text=\r\n\ \ \ \ Get\ the\ name\ for\ a\ phone\ book\ entry.\r\n\r\n\ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ name\ for\ entry\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNumber()
+comment2.text=\r\n\ \ \ \ Get\ the\ number\ for\ a\ phone\ book\ entry.\r\n\r\n\ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ number\ for\ entry\r\n
+numComments=3

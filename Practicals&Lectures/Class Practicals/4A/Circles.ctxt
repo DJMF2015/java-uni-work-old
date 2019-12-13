@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ \ The\ main\ program\ launcher\ for\ the\ Circles\ class\r\n\r\n\ @param\ \ args\ \ The\ command\ line\ arguments\ (ignored\ here)\r\n
+comment1.params=
+comment1.target=void\ createGUI()
+comment1.text=\r\n\ \ Sets\ up\ the\ graphical\ user\ interface\r\n
+comment2.params=e
+comment2.target=void\ stateChanged(javax.swing.event.ChangeEvent)
+comment2.text=\r\n\ \ Reacts\ to\ adjustment\ of\ the\ slider.\r\n\ \ Draws\ a\ number\ of\ circles\ as\ selected\ by\ the\ slider.\r\n\r\n\ @param\ \ e\ \ Details\ of\ the\ event\ (ignored\ here)\r\n
+numComments=3

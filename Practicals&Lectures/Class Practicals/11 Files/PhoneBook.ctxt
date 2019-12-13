@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PhoneBook()
+comment0.text=\r\n\ PhoneBook\ constructor\:\ Initialize\ from\ data\ file\r\n
+comment1.params=
+comment1.target=void\ readPhoneBookEntries()
+comment1.text=\r\n\ This\ method\ opens\ and\ reads\ in\ the\ contents\ of\ the\ data\ file\ given\ by\ phoneBookFile.\r\n\ Each\ line\ of\ the\ file\ contains\ one\ entry\ for\ the\ directory\:\r\n\ a\ subscriber's\ name,\ then\ a\ semicolon,\ then\ the\ subscriber's\ phone\ number.\r\n\ One\ Entry\ is\ added\ to\ the\ directory\ array\ for\ each\ line\ read\ in.\r\n\ If\ any\ exception\ occurs,\ then\ the\ file\ processing\ is\ halted,\r\n\ an\ on-screen\ alert\ is\ popped\ up\ for\ the\ user,\ and\ any\r\n\ directory\ entries\ already\ made\ are\ kept.\r\n
+comment2.params=
+comment2.target=void\ writePhoneBookEntries()
+comment2.text=\r\n\ This\ method\ opens\ the\ data\ file\ given\ by\ phoneBookFile,\ and\ writes\ out\ the\ current\ \r\n\ directory\ contents\ to\ data\ file.\ This\ will\ overwrite\ the\ previous\ contents\ of\ the\ file.\r\n\ Each\ entry\ in\ the\ directory\ is\ output\ as\ a\ single\ line\ of\ text\ to\ the\ file,\r\n\ with\ the\ a\ subscriber's\ name,\ then\ a\ semicolon,\ then\ the\ subscriber's\ phone\ number.\r\n\ Therefore\ this\ file\ can\ be\ read\ in\ again\ at\ a\ later\ time\ by\ readPhoneBookEntries.\r\n
+comment3.params=name\ phone
+comment3.target=boolean\ addEntry(java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ \ \ \ \ \ \ \ Add\ a\ phone\ book\ entry\ to\ array\ <var>directory</var>,\ checking\ whether\r\n\ \ \ \ \ \ \ \ there\ is\ space\ in\ the\ phone\ book\ for\ the\ new\ entry.\r\n\r\n\ \ \ \ \ \ \ \ @param\ name\ \ \ \ \ \ \ \ \ new\ name\r\n\ \ \ \ \ \ \ \ @param\ phone\ \ \ \ \ \ \ \ new\ phone\ number\r\n\ \ \ \ \ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ true/false\ if\ entry\ added/not\ added\r\n
+comment4.params=entry
+comment4.target=void\ deleteEntry(int)
+comment4.text=\r\n\ \ \ \ \ \ \ \ Delete\ phone\ book\ entry\ from\ array\ <var>directory</var>,\ moving\ later\r\n\ \ \ \ \ \ \ \ entries\ down\ one\ place\ and\ updating\ the\ next\ free\ entry\ index.\r\n\r\n\ \ \ \ \ \ \ \ @param\ entry\ \ \ \ \ \ \ \ phone\ book\ entry\ index\r\n
+comment5.params=person
+comment5.target=int\ findEntry(java.lang.String)
+comment5.text=\r\n\ \ \ \ \ \ \ \ Find\ a\ phone\ book\ entry\ in\ array\ <var>directory</var>.\ Accept\ a\ partial\r\n\ \ \ \ \ \ \ \ match\ on\ name,\ irrespective\ of\ letter\ case.\ If\ there\ are\ several\ candidate\r\n\ \ \ \ \ \ \ \ entries,\ the\ first\ is\ found.\r\n\r\n\ \ \ \ \ \ \ \ @param\ person\ \ \ \ \ \ \ person\ name\ to\ find\r\n\ \ \ \ \ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ index\ of\ matching\ entry,\ or\ -1\ if\ not\ found\r\n
+comment6.params=entry
+comment6.target=java.lang.String\ getName(int)
+comment6.text=\r\n\ \ \ \ \ \ \ \ Get\ the\ name\ for\ a\ phone\ book\ entry\ in\ array\ <var>directory</var>.\r\n\r\n\ \ \ \ \ \ \ \ @param\ entry\ \ \ \ \ \ \ \ phone\ book\ entry\ index\r\n\ \ \ \ \ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ name\ for\ entry\r\n
+comment7.params=entry
+comment7.target=java.lang.String\ getNumber(int)
+comment7.text=\r\n\ \ \ \ \ \ \ \ Get\ the\ number\ for\ a\ phone\ book\ entry\ in\ array\ <var>directory</var>.\r\n\r\n\ \ \ \ \ \ \ \ @param\ entry\ \ \ \ \ \ \ \ phone\ book\ entry\ index\r\n\ \ \ \ \ \ \ \ @return\ \ \ \ \ \ \ \ \ \ \ \ \ number\ for\ entry\r\n
+numComments=8

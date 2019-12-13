@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=
+comment1.target=void\ createGUI()
+comment1.text=\r\n\ \ The\ createGUI\ method\ is\ called\ by\ the\ main\ method\r\n\ \ to\ set\ up\ the\ graphical\ user\ interface.\r\n
+comment2.params=event
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=g
+comment3.target=void\ r(java.awt.Graphics)
+comment4.params=g
+comment4.target=void\ s(java.awt.Graphics)
+numComments=5

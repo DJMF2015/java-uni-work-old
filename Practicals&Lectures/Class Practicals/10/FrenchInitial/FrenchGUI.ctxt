@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=title
+comment0.target=FrenchGUI(java.lang.String)
+comment0.text=\r\n\ \ \ \ Constructor\ for\ translation\ application.\r\n\ \ \ \ Create\ translator\ window\ and\ initialize\ translator.\r\n
+comment1.params=
+comment1.target=void\ createGUI()
+comment1.text=\r\n\ \ \ \ Set\ up\ on-screen\ display.\r\n
+comment2.params=event
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ \ \ \ Handle\ menu\ clicks\ to\ edit\ text,\ reset\ translation,\ quit\ the\r\n\ \ \ \ application,\ and\ button\ clicks\ to\ set\ "easy",\ "nice",\ "hard".\r\n\r\n\ \ \ \ @param\ event\ \ \ \ \ \ \ \ menu/button\ click\ event\r\n
+comment3.params=event
+comment3.target=void\ itemStateChanged(java.awt.event.ItemEvent)
+comment3.text=\r\n\ \ \ \ Handle\ item\ clicks\ to\ set\ language\ and\ "very"\ option.\r\n\r\n\ \ \ \ @param\ event\ \ \ \ \ \ \ \ item\ event\r\n
+comment4.params=
+comment4.target=void\ showTranslation()
+comment4.text=\r\n\ \ \ \ Display\ translated\ sentence\ on-screen.\r\n
+comment5.params=
+comment5.target=void\ reset()
+comment5.text=\r\n\ \ \ \ Reset\ translation\ fields.\r\n
+numComments=6

@@ -1,0 +1,259 @@
+JAVA EXAM PAPER 2014
+SECTION A)
+
+11:15 08/12/2015
+
+Question 1)
+
+(a)To do...
+
+
+(b)To do...
+
+
+(c)
+3 different kinds of fault that a java compiler can detect as it's compiling. How does this detection affect the compiling process?
+A compile error (as oppose to run-time error) may detect a numebr of faults to do with incorrect java code.
+1) Syntax error such as missing brackets, colons or return statement. 
+2) 'illegal start of expression'. This usually occurs when the compiler is expecting an expreesion is expected but not found.
+3) 'not a statement' can occur if for example, the statement in question is misspelled/
+4) 'Array required but not found' can occur if you attempt to index a variable that is not an array.
+
+All the above compiling errors would simply display the error message and not compile or execute (until error is resolved).
+
+(d)
+Run time errors may be checked and tested for through use of 
+walkthoughs and inspections.
+This involves checking the variables are initiliazed correctly; making sure loops are correctly initilised and terminated; method calls have correct parameters. 
+And in case of walkthrough, make sure that the logic of the method achieves its desired purpose. Evidenc e suggests inspectiosn are a good way of detecting errors as actually
+running the program (doing testing) itself.
+
+(e)
+Run-time errors are not detected by the compiler and occur once the program has been execurted and launched. Using a 'debugger' such as in Blue J can help
+identify the problem. This may be achived by way of setting 'breakpoints' at the key sections of the code where the error may be occuring. For example, start of a method or
+near start of program itself. Using the debugger can enable you to detect what it is that is the problem by examining the variables and methods in detail.
+You could also use the method of 'signle-stepping' whereby you execute the program code one line at a time and folow the progress checking for errors and the actual outcome along the way.#
+For example, the intended outcoem compared to actual outcome.
+
+Question 2)
+
+(a)
+(i)"good working practice"
+Give examples: layout of program text:  
+
+The layout should generally confomr to the follwoing principles:
+indentation: this should be used to emphasise program structure. The number of 'spaces' from the margin should remain consistent throguhout.
+Blank lines: these should be used between code blocks (to seperate methods visually). this makes it easier for both programmer and reader to understand.
+      Blank lines are often used within a class to sepreate out the variable declarations from the methods.
+Pages: restrict your methods to one screen (a method should not be more than around 20 lines max).
+Comments: commenting is essential not only for the programmer but particualry to other developers who may later need to mainatin your code. By including appropriate and 
+      useful comments for methods and code blocks this helps make the maintainability of the code much easier and to understand the logic of.
+Other considerations consist of void numerous nested 'ifs'.
+
+(ii)
+Appropriate identifier for both names of variables and methods is crucial. 
+The 'house style' is that method names begin with a lower-case first letter and upper-case letter for the start of the word proceeding the first. eg) displayBalloon.
+As for variables names the names of the variables can consist of letetrs and digits. Teh names should be as meaningful and clear as possible for variables.
+For example, String studentName, rather than, say, sNme. 
+The convention for class name sis that they begin with an upper-class letter and for packages, a lower-case letter.
+
+(iii)
+Commenting is again very important for a program. All programs should be well comemnted and docuemnted on as much as possible, esp. for in a commercial environment where others may need to modify your code.
+Commenting should be used sensibly so that there is not too much of it to read and that it is used in areas such as methods, where explanation is needed most.
+//...text here...//
+/*
+...text here...
+*/
+
+(b)
+
+public void stateChanged (changeEvent e){ 
+   Graphics paper = paper.getGraphics();	// return graphics and store in paper...
+   paper.setColor(Color.White);  	 //set up panel for display
+   paper.fillRect(0,0,300,300);  
+
+   int yCoord = 0;  	//initialise variables yCoord and diameter
+   int diameter = 15;  
+   int Slider = Slider.getValue(); 	//return slider value 
+   
+   for (int = 0; i< Slider; i++) 	//loop through slider values
+   {
+   paper.drawOval(20, yCoord, diameter); 	//draw circle
+   yCoord = yCoord + 10; 	//set y coordinate
+   diameter = diameter + 10;   //set diameter
+   }
+}
+
+
+Question 3:
+(a)
+Describe while statement opertion: WHILE ( test )
+                                <action>
+
+The while statement is a way of executing a block of code several times over until a certain condition is satisfied.
+in a while loop statement the test is performed befor each execution of the loop body, in particular the first. This means if the first condition is false the loop body will never run. The condition (test) is some test that will enable the while statment to decide whether to execute the remaining code block. eg) while (i<6) {
+The <action. of the while statement is the part of the code block that carries out a specific action until the condition is false. eg) while...<condition>
+																int x = 10 + 15*(counter-1);																			paper.display (...)
+(B)
+
+(i)???
+
+(ii)
+
+i = 0    i=2      i = 4
+t1 = 0   T1 = o   T1 = o
+t2 = 0   T2 = 3   T2 = 10
+
+i=1      i = 3    i = 5
+T1 = 0   T1 = 0   T1 = 0
+T2=1     T2 = 6   T2 = 15
+
+(iii)
+The variables t1 and t2 will equate to the expression for t1 and t2 respectively, depending if the condition (1%2 ==0) is met.
+So t1 will reamin at 0? as i%2 ==0 is only met on the frist iteration, so the loop transfers down to t2 variable under the 'else' condition.
+
+
+(c)
+int t1 = 0;
+int t2 = 0;
+
+for (i= 0; i<6; i++){ //loop through i values, 1-6
+  if (i&2 ==0) //if zero
+ t1 = t1 +i; //t1 equals plus i
+}
+else
+   t2 = t2 + i; //t2 equals t2 plus value of i
+}
+i++; //incrementloop counter
+}
+
+For loop is better as it is count-controlled which is more appropriate when you know the value you wish to count up to for int i. i.e.) 6.
+This means that it will termiante as soon as the for loop condition is not met.
+
+
+SECTION B)
+
+question 4)
+{
+private String description;
+private int reference;
+private double cost;
+public Product(String d, int r, double c)
+{
+description = d;
+reference = r;
+cost = c;
+}
+public int getReference()
+{
+return(reference);
+}
+}
+
+(a)
+Instance Variable: an instance variable is a variable (such as int/double/String etc) that is instantiated 
+on the creation of a new object class. The reference to 'new' is used to instantaiate the variable.
+
+Constructor: a contructor is essentially a block of code similiair to a method that is called when an instance of an object is created.
+In particular, the constructor does not have a return type;is not considered a member of a class (unlike a method) and teh name of constructor
+must be the same as the class name.
+
+get/set methods:the get and set methods are used for returning a text field or other variable whether array or string
+and returns the variable so that it may be referred to for. Get methods provide access to the value a variable holds 
+while set methods assign values to the variables of the objects.
+use inside the method that called it. The set method is similair but instead
+is responsible for displaying the input to the user.
+
+It would be considered bad practice as the variable is not required to be made available to all classes (or methods). By keeping 
+it can be made relevaent to the referenced class only.By exposing as a public field you are telling the outside class 
+that is an actual piece of data that is stored by that class-information that external classes do not need to know.
+By using encapsulation to keep the methods private and refer to them via public methods rather than all classes. This helps avoid
+accidental access by other external classes not requiring access.he public methods are the access points to this class's fields from the outside java world.
+Normally these methods are referred as getters and setters.
+Therefore any class that wants to access the variables should access them through these getters and setters.
+
+(b)
+Create an instance of Product:
+
+public class product
+{
+ private variables here...
+  
+public product (String d, int r, double c)
+{
+productRecord = new Product('power supply', '4152', '21.63');
+
+#######Set different reference number:#######
+
+public class product (description, reference...)
+{
+public product(...)...
+{
+public int getReference();
+{
+product setReference(reference.getText());
+
+return (reference);
+
+####get value of the reference number into a variable:####
+
+int temp reference = reference; ???
+
+(c)
+int reference = -1;//unknown at start of search
+String description = description.getText(); //to display
+
+for (int i = 0; i<reference.length; i++) { //iterate through reference numbers
+}
+    if (description.equals(reference[i]<5000)) //if the prod.description matches(equals)less than reference no. 5000... incorrect ???
+{
+        description.setText(Product Description: " + description[i]; //return description of products less than reference no. 5000
+}
+
+Question 5:
+(a)
+The code achivve the following:
+ - initialsie a string array 'text' and create a new instance object of the variable array 'tetxt.
+ - In the main body countWords, the local variables are declared at start of method body before initialising a loop (while loop) that will
+   iterate through the characters (chars) in the string array 'text'testing at each index (char) whetehr the character meets the consdition.
+ - i.e.) if char 'a' is less or equal to teh next char i n array AND les or equal to char 'z'...
+ - add one to count
+ =  add one to word count loop
+ -  return thee wordCount (integer) of characters in each string of array that meet the specified conditions.
+    ie) 'java', '-', 'a', 'hot', 'brew', '.' (number of...)
+
+(b)
+A neater way of initialising the array might be;
+The way in which the array text has been initialised is paerfectly legitimate and would compile. If there was a very large list then it would be simpler
+to write the array a neater way (below). Alternatively use of a file might be used.
+
+String[] text = {"java", "-", "a", "hot", "brew", "."};
+
+(c)
+
+[i] ???
+
+[ii] a for loop would be preferable (as while both perform the same role) the for loop tends to be used when counting a fixed value at each step of the process
+ The for loop would also be a little neater as  would terminate as soon as the array [6] was evauated.
+
+[iii]
+ Using the value '6' is acceptable but not the best method. It would be preferable to use the index word as the indice with text.
+ i.e.) while (word < text[6]) //...which would search through the length of the text array until coming to last one[6].
+
+(d) Give a new version of countWords containing ALL improvements discussed in (c).
+
+
+int count = 0
+int word=0;
+word = text.length;
+char ch;
+
+for (text[word]; word<text; word++)
+   text[word] = word;
+{
+if ('a' <=ch && ch<= 'z')
+{ ...
+
+
+
+
