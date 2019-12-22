@@ -1,0 +1,5 @@
+WARNING - 07:20:47: First conversion pass
+WARNING - 07:20:48: Generic post-process : Creating activities
+WARNING - 07:20:49: Second pass : generating package usages
+WARNING - 07:20:49: Saving .uml resource: 20170806_072049
+WARNING - 07:20:49: Finished saving .uml resource: 20170806_072049
